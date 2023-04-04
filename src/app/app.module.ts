@@ -4,16 +4,24 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
+import { ModalFormComponent } from './modal-form/modal-form.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { PopUpComponent } from './pop-up/pop-up.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent
+    HeaderComponent,
+    PopUpComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    MatDialogModule,
+    AppRoutingModule,
+    BrowserAnimationsModule
   ],
+  entryComponents: [PopUpComponent],
   providers: [],
   bootstrap: [AppComponent]
 })

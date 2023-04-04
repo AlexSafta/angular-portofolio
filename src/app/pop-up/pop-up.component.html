@@ -1,0 +1,15 @@
+<form class="modalForm" action="#" method="post" enctype="multipart/form-data">
+	<label for="name">Nume:</label>
+	<input type="text" id="name" name="name" required>
+	<label for="description">Descriere:</label>
+	<input type="text" id="description" name="description" required>
+	<label for="link">Link:</label>
+	<input type="url" id="link" name="link" required>
+	<div class="drag-drop">
+		<label for="images">Încarcă imagini:</label>
+		<input type="file" id="images" name="images[]" multiple>
+		<span>Trage aici imaginile sau apasă pentru a le încărca.</span>
+		<div id="preview"></div>
+	</div>
+	<input type="submit" value="Trimite">
+</form>

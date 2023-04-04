@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import gsap from 'gsap';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { PopUpComponent } from '../pop-up/pop-up.component';
 import $ from 'jquery';
 
 @Component({
@@ -8,7 +9,13 @@ import $ from 'jquery';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
- 
+  constructor(public dialogRef : MatDialog){}
+
+  openDialog(){
+    const dialogRef = this.dialogRef.open(PopUpComponent, {
+      data: {}
+    });
+  }
 }
 
 $(document).ready(() => {
