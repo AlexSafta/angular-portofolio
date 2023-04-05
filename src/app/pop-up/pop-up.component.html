@@ -1,4 +1,4 @@
-<form class="modalForm" action="#" method="post" enctype="multipart/form-data">
+<form class="modalForm" id="myForm" method="post" enctype="multipart/form-data">
 	<label for="name">Nume:</label>
 	<input type="text" id="name" name="name" required>
 	<label for="description">Descriere:</label>
@@ -13,3 +13,27 @@
 	</div>
 	<input type="submit" value="Trimite">
 </form>
+
+<div id="message"></div>
+
+<script>
+  const form = document.getElementById('myForm');
+  const message = document.getElementById('message');
+  
+  form.addEventListener('submit', function(event) {
+    event.preventDefault();
+    
+    const formData = new FormData(form);
+    
+    fetch('http://localhost:3000/', {
+      method: 'POST',
+      body: formData
+    })
+    .then(response => {
+      message.innerHTML = "Formularul a fost trimis cu succes!";
+    })
+    .catch(error => {
+      message.innerHTML = "A apărut o eroare la trimiterea formularului.";
+    });
+  });
+</script>
