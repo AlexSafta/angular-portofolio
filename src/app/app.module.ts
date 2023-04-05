@@ -9,12 +9,18 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { PopUpComponent } from './pop-up/pop-up.component';
+import { CompanyDetailsComponent } from './company-details/company-details.component';
+import { CompaniesComponent } from './companies/companies.component';
+import { CompanyService } from './company.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    PopUpComponent
+    PopUpComponent,
+    CompaniesComponent,
+    CompanyDetailsComponent
+    
   ],
   imports: [
     BrowserModule,
@@ -24,7 +30,7 @@ import { PopUpComponent } from './pop-up/pop-up.component';
     MatInputModule, // adaugă MatInputModule în imports
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [CompanyService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,12 @@
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">{{company.name}}</h5>
+    <p class="card-text">{{company.description}}</p>
+    <a href="{{company.link}}" target="_blank">{{company.link}}</a>
+    <div class="d-flex justify-content-between mt-3">
+      <button class="btn btn-sm btn-primary" (click)="onEdit()">Edit</button>
+      <button class="btn btn-sm btn-danger" (click)="onDelete()">Delete</button>
+      <button class="btn btn-sm btn-secondary" (click)="onHide()">Hide</button>
+    </div>
+  </div>
+</div>

@@ -1,23 +1,24 @@
+// project.ts
 export class Project {
   id?: number;
-  title: string = '';
-  description: string = '';
-  image: string = '';
-  url: string = '';
+  title = '';
+  description = '';
+  image = '';
+  url = '';
 }
 
-const express = require('express');
-const bodyParser = require('body-parser');
+// server.ts
+import express from 'express';
+import bodyParser from 'body-parser';
 
 const app = express();
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-app.post('/projects', (req: { body: any; }, res: any) => {
+app.post('/projects', (req, res) => {
   const project = req.body;
   // gestionați datele primite aici
 });
 
 app.listen(3000, () => console.log('Serverul rulează pe portul 3000'));
-
